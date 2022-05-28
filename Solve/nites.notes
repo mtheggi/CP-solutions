@@ -1,0 +1,9 @@
+frequency array  :
+    int n; 
+    cin >> n;
+    int freq [100] ;
+    int main(){
+        there are so many things that neeed to be done 
+
+    
+    }
