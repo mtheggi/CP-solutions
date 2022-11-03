@@ -1,5 +1,5 @@
 // Backtracking 
-/*
+/*1
 ! U R given some some elements and a target sum . U goal to is to print all subsets that sum up to the target Sum. 
 input Example : 
 5 6

@@ -6,7 +6,7 @@
     cout.tie(NULL)
  
 using namespace std;
- 
+ // 
 int main()
 {
     fastio;

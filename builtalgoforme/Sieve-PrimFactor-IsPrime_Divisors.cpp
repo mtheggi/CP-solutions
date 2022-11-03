@@ -2,6 +2,7 @@
 #define ll long long
 #define ld long double
 #define el "\n"
+// w 
 using namespace std;
 bool isPrime(int n)
 { // O(sqrt(n))
