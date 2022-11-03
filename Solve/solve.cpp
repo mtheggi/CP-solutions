@@ -16,10 +16,6 @@ int main()
 #ifndef ONLINE_JUDGE
     freopen("output", "wt", stdout);
 #endif
-
-        /* solution */
-
-
-
+   cout << "Hello there are so much things in the middle of nowhere so pleasze there are somuch things that neede to be done" <<el; 
     return 0;
 }

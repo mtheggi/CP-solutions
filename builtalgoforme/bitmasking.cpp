@@ -60,7 +60,7 @@
         // output all possible subsets of the array using BitMasking
         int n;
         cin >> n;
-        int a[n + 2];
+        vector<int> a(n + 2);
         for(int i = 0; i < n; i++) cin >> a[i];
         int limit = (1 << n) - 1;
         for(int msk = 0; msk <= limit; msk++){
