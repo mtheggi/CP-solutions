@@ -53,9 +53,6 @@ void generateHash( string &str)
             pref[i] = add(pref[i],pref[i-1]);
     }
 }
-
-
-
 int getHash( int l , int r)
 {
     int ret = pref[r];

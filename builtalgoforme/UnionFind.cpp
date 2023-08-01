@@ -1,5 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std ;
+    // connecting n nodes
+    // O(nlgn ) -> by union by size optimization Only
+    // O(n) amortized time by both path compression and union by size
 class unionfind {
 private  :
     int size;
@@ -31,10 +34,10 @@ public :
     int componentSize(int p) { return sz[Find(p)]; }
     bool connected(int a, int p) { return (Find(a) == Find(p)); }
     int getcomponent() { return component; }
-    void unify(int a, int b) {
+    void unify(int a, int b) { // unify by size 
         int root_a = Find(a);
         int root_b = Find(b);
-        if (root_a == root_b) return;
+        if (root_a == root_b) return; // cycles --> they are connected 
         if (sz[root_a] < sz[root_b]) swap(root_a, root_b);
         parent[root_b] = root_a;
         sz[root_a] += sz[root_b];
