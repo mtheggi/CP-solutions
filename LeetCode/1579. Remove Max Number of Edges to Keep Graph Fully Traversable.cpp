@@ -43,7 +43,6 @@ public:
         construct(n); 
         int ans =0 ; 
         map<pair<int,int>, vector<int>> newEdges;  
-        map<vector<int>,bool> removed;  
         for(auto edge : edges ) newEdges[make_pair(min(edge[1],edge[2])  , max(edge[1],edge[2]) )].push_back(edge[0]); 
         for(auto  &edge: newEdges) {
             if(find(edge.second.begin() , edge.second.end() , 3) != edge.second.end()){
@@ -54,27 +53,19 @@ public:
         // alice 
         for(auto edge : newEdges) {
             if(find(edge.second.begin() , edge.second.end() , 3) != edge.second.end()){
-                int a = edge.first.first  , b = edge.first.second; 
-                a--; 
-                b--;
-                if(connected(a , b )){
+                if(connected( edge.first.first -1 , edge.first.second-1 )){
                     ans++; 
-                    removed[{3 , a ,b}]=true; 
                 }else{
-                    unify(a,b); 
+                    unify( edge.first.first -1 , edge.first.second-1 ); 
                 }
             } 
         }
         for(auto edge : newEdges) {
             if(find(edge.second.begin() , edge.second.end() , 1) != edge.second.end()){
-                int a = edge.first.first  , b = edge.first.second; 
-                a--; 
-                b--;
-                if(connected(a , b )){
+                if(connected( edge.first.first -1 , edge.first.second-1 )){
                     ans++; 
-                    removed[{1 , a ,b}]=true; 
                 }else{
-                    unify(a,b); 
+                    unify( edge.first.first -1 , edge.first.second-1 ); 
                 }
 
             }
@@ -84,26 +75,18 @@ public:
         // bob 
         for(auto edge : newEdges) {
             if(find(edge.second.begin() , edge.second.end() , 3) != edge.second.end()){
-                int a = edge.first.first  , b = edge.first.second; 
-                a--; 
-                b--;
-                if(!connected(a , b )){
-                    unify(a,b); 
+                if(!connected( edge.first.first -1 , edge.first.second-1 )){
+                    unify( edge.first.first -1 , edge.first.second-1 ); 
                 }
             } 
         }
         for(auto edge : newEdges) {
             if(find(edge.second.begin() , edge.second.end() , 2) != edge.second.end()){
-                int a = edge.first.first  , b = edge.first.second; 
-                a--; 
-                b--;
-                if(connected(a , b )){
+                if(connected( edge.first.first -1 , edge.first.second-1  )){
                     ans++; 
-                    removed[{2 , a ,b}]=true; 
                 }else{
-                    unify(a,b); 
+                    unify( edge.first.first -1 , edge.first.second-1 ); 
                 }
-
             }
         }
         if(getcomponent() != 1 ) return -1 ; 
